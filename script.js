@@ -12,3 +12,8 @@ const data = [
   { country: "Mexico", population: 130 },
   { country: "Venezuela", population: 28 },
 ];
+
+// Define variables for the chart dimensions and scales
+const margin = { top: 20, right: 20, bottom: 60, left: 60 };
+const width = 800 - margin.left - margin.right;
+const height = 500 - margin.top - margin.bottom;
