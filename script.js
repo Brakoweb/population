@@ -30,3 +30,12 @@ const y = d3
   .scaleLinear()
   .domain([0, d3.max(data, (d) => d.population)])
   .range([height, 0]);
+
+// Create an SVG element for the chart, define its width and height, and append a group element to it
+const svg = d3
+  .select("#chart")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom + 20)
+  .append("g")
+  .attr("transform", `translate(${margin.left},${margin.top})`);
