@@ -24,3 +24,9 @@ const x = d3
   .domain(data.map((d) => d.country))
   .range([0, width])
   .padding(0.2);
+
+// Create a linear scale for the y-axis
+const y = d3
+  .scaleLinear()
+  .domain([0, d3.max(data, (d) => d.population)])
+  .range([height, 0]);
