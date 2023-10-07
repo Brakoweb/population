@@ -69,3 +69,6 @@ svg
   .attr("dx", "-.8em")
   .attr("dy", ".15em")
   .attr("transform", "rotate(-65)");
+
+// Add y-axis labels to the chart
+svg.append("g").call(d3.axisLeft(y));
