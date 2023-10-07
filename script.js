@@ -39,3 +39,22 @@ const svg = d3
   .attr("height", height + margin.top + margin.bottom + 20)
   .append("g")
   .attr("transform", `translate(${margin.left},${margin.top})`);
+
+// Create rectangles for each data point and add interactivity with mouseover and mouseout events
+svg
+  .selectAll(".bar")
+  .data(data)
+  .enter()
+  .append("rect")
+  .attr("class", "bar")
+  .attr("x", (d) => x(d.country))
+  .attr("width", x.bandwidth())
+  .attr("y", (d) => y(d.population))
+  .attr("height", (d) => height - y(d.population))
+  .attr("fill", "steelblue")
+  .on("mouseover", function (d) {
+    d3.select(this).style("fill", "#5db0f5");
+  })
+  .on("mouseout", function (d) {
+    d3.select(this).style("fill", "steelblue");
+  });
