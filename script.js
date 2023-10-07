@@ -17,3 +17,10 @@ const data = [
 const margin = { top: 20, right: 20, bottom: 60, left: 60 };
 const width = 800 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
+
+// Create a band scale for the x-axis
+const x = d3
+  .scaleBand()
+  .domain(data.map((d) => d.country))
+  .range([0, width])
+  .padding(0.2);
