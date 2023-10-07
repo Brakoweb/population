@@ -58,3 +58,14 @@ svg
   .on("mouseout", function (d) {
     d3.select(this).style("fill", "steelblue");
   });
+
+// Add x-axis labels to the chart
+svg
+  .append("g")
+  .attr("transform", `translate(0,${height})`)
+  .call(d3.axisBottom(x))
+  .selectAll("text")
+  .style("text-anchor", "end")
+  .attr("dx", "-.8em")
+  .attr("dy", ".15em")
+  .attr("transform", "rotate(-65)");
